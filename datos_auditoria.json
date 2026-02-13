@@ -1,0 +1,8 @@
+[
+    {"id": 101, "monto": 15500, "comuna": "Hualpén", "cliente": "Tienda A"},
+    {"id": 102, "monto": "20000", "comuna": "Talcahuano", "cliente": "Tienda B"},
+    {"id": 103, "monto": -500, "comuna": "Hualpén", "cliente": "Tienda C"},
+    {"id": 104, "monto": 8000, "comuna": "Concepción"},
+    {"id": "ERROR_ID", "monto": 10000, "comuna": "Hualpén", "cliente": "Tienda E"},
+    {"id": 106, "monto": 55000, "comuna": "Hualpén", "cliente": "Tienda F"}
+]

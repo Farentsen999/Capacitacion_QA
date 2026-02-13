@@ -1,0 +1,59 @@
+Característica: Gestión de compras en la tienda virtual
+
+  Escenario 1: Compra exitosa de multiples los productos
+    Dado que un usuario registrado esta en la pagina de login
+    Cuando el usuario quiere iniciar sesión y completa completa el proceso
+    de login con los siguientes datos: 
+      | nombre de usuario  | contraseña  |
+      | standar_user       | secret_sauce|
+    Entonces el sistema debe llevar al usuario a la página de inventario donde podra  
+    agregar los productos que desea comprar al carrito.
+
+    Dado que el usuario esta en la pagina de inventario y agrego los productos que desea comprar al
+    carrito 
+    Cuando quiere ver el conjunto de productos que añadio al carrito y presiona el ícono del carrito
+    Entonces sistema debe llevar al usuario a la pagina del carrito donde se mostraran los productos que
+    selecciono para comprar.
+   
+    Dado que el usuario esta en la pagina del carrito esta de acuerdo con la selección de productos
+    Cuando el usuario esta de acuerdo con la selección de productos y da click al boton checkout 
+    Entonces el sistema debe llevar al usuario a la pagina de checkout donde se mostraran los productos
+    que selecciono para comprar
+
+    Dado que un usuario esta en la pagina de checkout
+    Cuando el usuario completa el proceso de checkout con los siguientes datos:
+      | nombre  | apellido | zip_code |
+      | Alfredo | QA       | 11780    | y presiona el boton continuar
+    Entonces el sistema debe llevar al usuario a la pagina de Overview donde se mostraran los
+    productos que selecciono para comprar y el valor total de su compra antes de impuestos.
+
+    Dado que el usuario esta en la pagina de OverView y esta de acuerdo con la selección de productos
+    Cuando el usuario desea continuar con la compra y da click en el boton finish
+    Entonces el sistema debe llevar al usuario a la pagina Finish donde se mostrara
+    el mensaje de confirmación: "Thank you for your order!".
+
+
+Escenario 2: Intento de compra sin añadir productos al carrito
+    Dado que un usuario registrado esta en la pagina de login
+    Cuando el usuario quiere iniciar sesión y completa completa el proceso
+    de login con los siguientes datos: 
+      | nombre de usuario  | contraseña  |
+      | standar_user       | secret_sauce|
+    Entonces el sistema debe llevar al usuario a la página de inventario donde podra  
+    agregar los productos que desea comprar al carrito.
+
+    Dado que el usuario esta en la pagina de inventario y no ha agregado producto al carrito
+    Cuando quiere ver el conjunto de productos que añadio al carrito y presiona el ícono del carrito
+    Entonces sistema debe mostrar al usuario el mensaje de rechazo:
+    "You haven't selected any products yet!" por 1 segundo.
+
+Escenario 3: Intento de login con usuario bloqueado
+    Dado que un usuario bloqueado esta en la pagina de login
+    Cuando el usuario quiere iniciar sesión y completa completa el proceso
+    de login con los siguientes datos: 
+      | nombre de usuario    | contraseña  |
+      | locked_out_user      | secret_sauce|
+    Entonces el sistema debe mostrar al usuario el mensaje de rechazo:
+    "Epic sadface: Sorry, this user has been locked out.".
+    
+    
