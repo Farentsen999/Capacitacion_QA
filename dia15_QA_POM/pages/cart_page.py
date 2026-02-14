@@ -28,13 +28,8 @@ class CartPage:
     
     def ir_a_checkout(self):
         self.checkout_button.click()
+        self.page.wait_for_url("https://www.saucedemo.com/checkout-step-one.html")
         from pages.checkout_page import CheckoutPage
         return CheckoutPage(self.page)
-    
-    def volver_a_shopping(self):
-        self.shopping_button.click()
-        return self.shopping_button(self.page)
-        
-                
         
         

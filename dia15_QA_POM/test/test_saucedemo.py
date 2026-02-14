@@ -1,4 +1,4 @@
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 from pages.login_page import LoginPage
 
 def test_flujo_completo_pom():
@@ -35,11 +35,11 @@ def test_flujo_completo_pom():
         
         # Ir a la pagina final
         finish = overview.pagina_final()
-        assert finish.retornar_mensaje() == "Thank you for your order!"
+        expect(finish.succes_message).to_have_text("Thank you for your order!")
         
         # Volver a inventario
         inventario2 = finish.retornar_a_productos()
-        assert(inventario2.page) == inventario.page
+        expect(inventario2.page).to_have_url("https://www.saucedemo.com/inventory.html")
                 
         # Cerrar Navegador
         browser.close()

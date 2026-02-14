@@ -40,6 +40,7 @@ class OverviewPage:
 
     def pagina_final(self):
         self.finish_button.click()
+        self.page.wait_for_url("https://www.saucedemo.com/checkout-complete.html")
         from.finish_page import FinishPage
         return FinishPage(self.page)
     
