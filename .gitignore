@@ -22,3 +22,17 @@ screenshots/
 
 # Variables de entorno
 .env
+
+# --- Evidencia de Pruebas ---
+evidence/
+
+# Por si acaso alguien crea carpetas por defecto de Playwright
+test-results/
+playwright-report/
+blob-report/
+videos/
+screenshots/
+
+# Archivos de traza y comprimidos
+*.zip
+*.video.webapp
