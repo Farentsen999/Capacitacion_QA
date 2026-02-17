@@ -13,5 +13,5 @@ class LoginPage:
         self.password_input.fill(password)
         self.login_button.click()
         self.page.wait_for_url("https://www.saucedemo.com/inventory.html")
-        from pages.inventory_page import InventoryPage
+        from pages.saucedemo.inventory_page import InventoryPage
         return InventoryPage(self.page)

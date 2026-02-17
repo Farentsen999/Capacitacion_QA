@@ -10,5 +10,5 @@ class FinishPage:
     def retornar_a_productos(self):
         self.inventory_button.click()
         self.page.wait_for_url("https://www.saucedemo.com/inventory.html")
-        from pages.inventory_page import InventoryPage
+        from pages.saucedemo.inventory_page import InventoryPage
         return InventoryPage(self.page)

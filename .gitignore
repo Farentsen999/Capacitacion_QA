@@ -23,10 +23,12 @@ screenshots/
 # Variables de entorno
 .env
 
-# --- Evidencia de Pruebas ---
+# Evidencia de Pruebas excepto .gitkeep
 evidence/
+evidence/*
+!evidence/.gitkeep
 
-# Por si acaso alguien crea carpetas por defecto de Playwright
+# Carpetas por defecto de Playwright
 test-results/
 playwright-report/
 blob-report/

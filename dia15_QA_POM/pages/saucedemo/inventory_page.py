@@ -24,5 +24,5 @@ class InventoryPage:
     def ir_al_carrito(self):
         self.cart_icon.click()
         self.page.wait_for_url("https://www.saucedemo.com/cart.html")
-        from pages.cart_page import CartPage
+        from pages.saucedemo.cart_page import CartPage
         return CartPage(self.page)

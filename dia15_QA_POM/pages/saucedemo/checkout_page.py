@@ -12,7 +12,7 @@ class CheckoutPage:
         self.zip_code.fill(zip)
         self.continue_button.click()
         self.page.wait_for_url("https://www.saucedemo.com/checkout-step-two.html")
-        from pages.overview_page import OverviewPage
+        from pages.saucedemo.overview_page import OverviewPage
         return OverviewPage(self.page)
         
         
