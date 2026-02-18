@@ -14,7 +14,7 @@ def sign_up_test ():
         try:
             signup = SignupLoginPage(page)
             signup.navegar()
-            signup_details = signup.iniciar_registro("Luciano", "matias1234@gmail.com")
+            signup_details = signup.iniciar_registro("Luciano", "matias100075@gmail.com")
             
             datos = {
             'gender':"Male",
@@ -32,9 +32,17 @@ def sign_up_test ():
             'zipcode':"44001",
             'mobile_number':"977552595"            
             }
-            page = signup_details.create_acount(datos)
-            expect(page.locator('[data-qa="account-created"]')).to_have_text("Account Created!")
+            new_account = signup_details.create_acount(datos)
+            expect(new_account.account_created_confirmation).to_have_text("Account Created!")
             
+            home1 = new_account.continuar()
+            expect(home1.logged_in_as).to_contain_text("Logged in as")
+            
+            delete_account = home1.delete_account()
+            expect(delete_account.account_deleted_confirmation).to_have_text("Account Deleted!")
+            home2 = delete_account.continuar()
+            expect(home2.page).to_have_url("https://automationexercise.com/")
+    
         except Exception as e:
             page.screenshot(path="evidence/screenshots/failed_test.png")
             raise e

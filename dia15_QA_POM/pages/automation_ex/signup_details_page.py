@@ -50,7 +50,8 @@ class SignupDetailsPage:
         self.number_input.fill(data['mobile_number'])
         self.create_acount_button.click()
         self.page.wait_for_url("https://automationexercise.com/account_created")
-        return self.page
+        from pages.automation_ex.account_created_page import AccountCreatedPage
+        return AccountCreatedPage(self.page)
         
         
         
