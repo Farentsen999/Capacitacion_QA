@@ -6,7 +6,7 @@ def test_sign_up (page):
     # 1. Iniciamos en la pagina de login/signup
     signup = SignupLoginPage(page)
     signup.navegar()
-    signup_details = signup.iniciar_registro("Luciano", "matias100075@gmail.com")
+    signup_details = signup.iniciar_registro("Luciano", "matias7@gmail.com")
             
     # Datos necesarios para crear una nueva cuenta
     datos = {
